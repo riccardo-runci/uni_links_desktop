@@ -19,6 +19,10 @@ class ProtocolRegistrar {
   Future<void> register(String scheme) async {
     throw UnimplementedError();
   }
+
+  Future<void> unregister(String scheme) async {
+    throw UnimplementedError();
+  }
 }
 
 final protocolRegistrar = ProtocolRegistrar.instance;

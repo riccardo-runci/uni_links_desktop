@@ -31,4 +31,10 @@ class ProtocolRegistrarImplWindows extends ProtocolRegistrar {
     regKey.createValue(protocolRegValue);
     regKey.createKey(protocolCmdRegKey).createValue(protocolCmdRegValue);
   }
+
+  @override
+  Future<void> unregister(String scheme) async{
+    String protocolRegKey = 'Software\\Classes\\$scheme';
+    Registry.currentUser.deleteKey(protocolRegKey, recursive: true);
+  }
 }
